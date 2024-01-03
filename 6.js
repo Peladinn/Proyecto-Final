@@ -4,17 +4,24 @@ let divPersonajes = document.getElementById('personajes');
 let botonFiltroTodo = document.getElementById('filtroTodo');
 let botonFiltroMujer = document.getElementById('filtroMujer');
 let botonFiltroHombre = document.getElementById('filtroHombre');
+let botonFiltroUnknown = document.getElementById('filtroUnknown');
+let botonFiltroGenderless = document.getElementById('filtroGenderless');
     // botones Paginado
 let botonPrimeraPagina = document.getElementById('primeraPagina');
 let botonAnteriorPagina = document.getElementById("anterior");
 let botonSiguientePagina = document.getElementById("siguiente");
 let botonUltimaPagina = document.getElementById('ultimaPagina'); 
 
+let SpanCantPersonajes = document.getElementById('CanPersonajes')
+
 let totalPersonajes;
 let paginaActual=1;
 
 // funcion para mostrar los personajes en el html
 function mostrarEnElHtml (arrPersonajes) {
+    let NumeroPersonajes = arrPersonajes.length
+    SpanCantPersonajes.innerText = NumeroPersonajes
+
     // estamos limpiando lo que habia antes en el div
     divPersonajes.innerHTML='';
     // ahora le agregamos los personajes nuevos que queres mostrar
@@ -62,6 +69,20 @@ function filtroHombre () {
     mostrarEnElHtml(hombres);
 }
 
+function filtroUnknown () {
+    let unknown = totalPersonajes.filter((itemPersonaje)=>{
+        return itemPersonaje.gender==='unknown'
+    });
+    mostrarEnElHtml(unknown);
+};
+
+function filtroGenderless () {
+    let Genderless = totalPersonajes.filter((itemPersonaje)=>{
+        return itemPersonaje.gender==='genderless'
+    });
+    mostrarEnElHtml(Genderless);
+}
+
 function filtroTodo () {
     mostrarEnElHtml(totalPersonajes);
 }
@@ -70,6 +91,8 @@ function filtroTodo () {
 botonFiltroMujer.addEventListener('click',filtroMujer);
 botonFiltroHombre.addEventListener('click',filtroHombre);
 botonFiltroTodo.addEventListener('click',filtroTodo);
+botonFiltroUnknown.addEventListener('click',filtroUnknown);
+botonFiltroGenderless.addEventListener('click',filtroGenderless);
 
 botonPrimeraPagina.disabled=true;
 botonAnteriorPagina.disabled=true;
