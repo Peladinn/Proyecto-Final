@@ -38,6 +38,7 @@ function mostrarEnElHtml (arrPersonajes) {
                                         </div>
                                     </div>`
     })
+
 }
 
 
@@ -94,8 +95,6 @@ botonFiltroTodo.addEventListener('click',filtroTodo);
 botonFiltroUnknown.addEventListener('click',filtroUnknown);
 botonFiltroGenderless.addEventListener('click',filtroGenderless);
 
-botonPrimeraPagina.disabled=true;
-botonAnteriorPagina.disabled=true;
 
 
 // PAGINADO
@@ -122,21 +121,21 @@ function ultimaPagina () {
     pedidoFetch(paginaActual);
      //console.log(paginaActual)
 }
-const paginas = () => {
-    if(paginaActual === 1){
-        primeraPagina.disabled=true
-        anteriorPagina.disabled=true
+let disablePageBtns = () => {
+    if(paginaActual <= 1){
+        botonPrimeraPagina.disabled = true
+disablePageBtns();        botonAnteriorPagina.disabled = true
     } else {
-        primeraPagina.disabled=false
-        anteriorPagina.disabled=false
+        botonPrimeraPagina.disabled = false
+        botonAnteriorPagina.disabled = false
     }
 
-    if(paginaActual === 42){
-        ultimaPagina.disabled=true
-        siguientePagina.disabled=true
+    if(paginaActual >= 42){
+        botonUltimaPagina.disabled = true
+        botonSiguientePagina.disabled = true
     } else {
-        ultimaPagina.disabled=false
-        siguientePagina.disabled=false
+        botonUltimaPagina.disabled = false
+        botonSiguientePagina.disabled = false
     }
 
 }
