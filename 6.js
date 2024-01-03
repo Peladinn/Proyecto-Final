@@ -38,7 +38,7 @@ function mostrarEnElHtml (arrPersonajes) {
                                         </div>
                                     </div>`
     })
-
+    disablePageBtns();
 }
 
 
@@ -124,7 +124,7 @@ function ultimaPagina () {
 let disablePageBtns = () => {
     if(paginaActual <= 1){
         botonPrimeraPagina.disabled = true
-disablePageBtns();        botonAnteriorPagina.disabled = true
+        botonAnteriorPagina.disabled = true
     } else {
         botonPrimeraPagina.disabled = false
         botonAnteriorPagina.disabled = false
