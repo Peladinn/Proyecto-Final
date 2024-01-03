@@ -1,0 +1,96 @@
+
+nav {
+    color: white;
+    display: flex;
+    list-style-type: none;
+    height: 70px;
+    position: relative;
+    background-color: black;
+    box-shadow: gray 4px 4px 5px 0px;
+}
+
+.derecha {
+    flex-grow: 2;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    img{
+        width: 70px;
+    }
+    
+}
+.filtros {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row-reverse;
+    border: 0px;
+    button {
+        font-size: 15px;
+        padding: 15px;
+        color: white;
+        background-color: black;
+        border: 0px;
+    }
+}
+
+#personajes {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: cursive;
+    font-size: 15px;
+    flex-grow: 1;
+  
+}
+.personaje {
+    border-style: dashed;
+    border: 5cm;
+    border-radius: 5px;
+    width: 23%;
+    margin: 10px;
+    box-shadow: gray 3px 3px 7px 1px;
+    img {
+        border-radius: 5px 5px 0px 0px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+.div {
+    padding: 20px;
+}
+h2 {
+    font-family: cursive;
+    font-size: 15px;
+}
+
+@media (max-width: 1031px) {
+    .filtros {
+        display: none !important;
+    }
+    .derecha {
+        position: absolute;
+        color: #fff;
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1031px) { 
+    .personaje {
+        flex-grow: 1;
+        width: 40%;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .personaje {
+        flex-grow: 1;
+        width: 100%;
+        margin: 20px;
+    }
+}
+
