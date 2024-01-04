@@ -12,7 +12,9 @@ let botonAnteriorPagina = document.getElementById("anterior");
 let botonSiguientePagina = document.getElementById("siguiente");
 let botonUltimaPagina = document.getElementById('ultimaPagina'); 
 
-let SpanCantPersonajes = document.getElementById('CanPersonajes')
+let SpanCantPersonajes = document.getElementById('CanPersonajes');
+
+let spanPagActual = document.getElementById('pagActual');
 
 let totalPersonajes;
 let paginaActual=1;
@@ -21,6 +23,8 @@ let paginaActual=1;
 function mostrarEnElHtml (arrPersonajes) {
     let NumeroPersonajes = arrPersonajes.length
     SpanCantPersonajes.innerText = NumeroPersonajes
+
+    spanPagActual.innerText = paginaActual
 
     // estamos limpiando lo que habia antes en el div
     divPersonajes.innerHTML='';
